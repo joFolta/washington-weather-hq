@@ -1,5 +1,13 @@
 # washington-weather-hq
+
+
 Mt Washington weather web app built with NextJS, Typescript
+**DISCLAIMER: This demo app is for educational purposes only. Not intended for use in a production app.** 
+
+### Technologies used:
+- https://github.com/niutech/x-frame-bypass
+- https://mui.com/, https://github.com/mui/material-ui/tree/v5.14.7/docs/data/material/getting-started/templates/dashboard
+
 
 ------------------
 
