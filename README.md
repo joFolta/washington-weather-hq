@@ -8,6 +8,11 @@ Mt Washington weather web app built with NextJS, Typescript
 - https://github.com/niutech/x-frame-bypass
 - https://mui.com/, https://github.com/mui/material-ui/tree/v5.14.7/docs/data/material/getting-started/templates/dashboard
 
+### Hurdles
+#### Integration issues of NextJS with MaterialUI 
+- e.g. Error: Attempted to call styled() from the server but styled is on the client. It's not possible to invoke a clienton from the server, it can only be rendered as a Component or passed to props of a Client Component.
+- https://mui.com/material-ui/guides/next-js-app-router/ 
+- https://github.com/mui/material-ui/tree/master/examples/material-ui-nextjs-ts 
 
 ------------------
 

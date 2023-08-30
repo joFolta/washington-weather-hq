@@ -6,18 +6,3 @@
   padding: 6rem;
   min-height: 100vh;
 } */
-
-/* #weatherStationContainer {
-  width: 400px;
-  height: 400px;
-  overflow: hidden;
-  position: relative;
-} */
-
-#weatherStation {
-  /* position: absolute; */
-  /* top: -100px;
-  left: -100px; */
-  width: 1280px;
-  height: 1200px;
-}
