@@ -20,14 +20,7 @@ import Switch from '@mui/material/Switch';
 
 export const mainListItems = (
     <React.Fragment>
-        {/* <ListItemButton component={Link} href={'/'}> */}
-        {/* TODO REMOVE */}
-        <ListItemButton component={Link} href={{
-            pathname: '/',
-            query: {
-                isDarkMode: 'search???'
-            }
-        }}>
+        <ListItemButton component={Link} href={'/'}>
             <ListItemIcon>
                 <StormIcon />
             </ListItemIcon>

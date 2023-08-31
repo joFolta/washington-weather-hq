@@ -176,9 +176,7 @@ export default function Dashboard({ isDarkMode, toggleDarkMode, children }: { is
                             flexDirection: 'column'
                         }}
                     >
-                        {/* {children} */}
-                        {/* {React.cloneElement(children, { isDarkMode: isDarkMode })} */}
-                        {React.cloneElement(children, { hello: "123" })}
+                        {children}
                     </Paper>
                     {/* </Grid>
                     </Grid> */}
