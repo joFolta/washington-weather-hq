@@ -1,3 +1,5 @@
+"use client"
+
 import * as React from 'react';
 import type { Metadata } from 'next'
 import HomeIcon from '@mui/icons-material/Home';
@@ -15,11 +17,20 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
+  const [isDarkMode, setIsDarkMode] = React.useState(false);
+
+  // TODO REMOVE LOG 
+  console.log('isDarkMode', isDarkMode);
+
+  const toggleDarkMode = () => {
+    setIsDarkMode(!isDarkMode);
+  };
+
   return (
     <html lang="en">
       <body>
-        <ThemeRegistry>
-          <Dashboard>{children}</Dashboard>
+        <ThemeRegistry isDarkMode={isDarkMode}>
+          <Dashboard isDarkMode={isDarkMode} toggleDarkMode={toggleDarkMode}>{children}</Dashboard>
         </ThemeRegistry>
       </body>
     </html>

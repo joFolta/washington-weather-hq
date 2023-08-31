@@ -7,26 +7,26 @@ const roboto = Roboto({
   display: 'swap',
 });
 
-const theme = createTheme({
-  palette: {
-    mode: 'light',
-    // TODO
-    // mode: 'dark',
-  },
-  typography: {
-    fontFamily: roboto.style.fontFamily,
-  },
-  components: {
-    MuiAlert: {
-      styleOverrides: {
-        root: ({ ownerState }) => ({
-          ...(ownerState.severity === 'info' && {
-            backgroundColor: '#60a5fa',
+const theme = (isDarkMode: boolean) => {
+  return createTheme({
+    palette: {
+      mode: isDarkMode ? 'dark' : 'light',
+    },
+    typography: {
+      fontFamily: roboto.style.fontFamily,
+    },
+    components: {
+      MuiAlert: {
+        styleOverrides: {
+          root: ({ ownerState }) => ({
+            ...(ownerState.severity === 'info' && {
+              backgroundColor: '#60a5fa',
+            }),
           }),
-        }),
+        },
       },
     },
-  },
-});
+  })
+};
 
 export default theme;

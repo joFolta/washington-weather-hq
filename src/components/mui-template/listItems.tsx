@@ -20,7 +20,14 @@ import Switch from '@mui/material/Switch';
 
 export const mainListItems = (
     <React.Fragment>
-        <ListItemButton component={Link} href={'/'}>
+        {/* <ListItemButton component={Link} href={'/'}> */}
+        {/* TODO REMOVE */}
+        <ListItemButton component={Link} href={{
+            pathname: '/',
+            query: {
+                isDarkMode: 'search???'
+            }
+        }}>
             <ListItemIcon>
                 <StormIcon />
             </ListItemIcon>
@@ -53,20 +60,10 @@ export const mainListItems = (
     </React.Fragment>
 );
 
-export const SecondaryListItems = () => {
-    // TODO: look into actualizing dark mode
-    const [isDarkMode, setIsDarkMode] = React.useState(false);
-
-    // TODO REMOVE LOG 
-    console.log('isDarkMode', isDarkMode);
-
-    const handleToggle = () => {
-        setIsDarkMode(!isDarkMode);
-    };
-
+export const SecondaryListItems = ({ isDarkMode, toggleDarkMode }: { isDarkMode: boolean, toggleDarkMode: () => void }) => {
     return (
         <React.Fragment >
-            <ListItem onClick={handleToggle}>
+            <ListItem onClick={toggleDarkMode}>
                 <ListItemIcon>
                     {isDarkMode ? <DarkModeSharpIcon /> : <WbSunnySharpIcon />}
                 </ListItemIcon>

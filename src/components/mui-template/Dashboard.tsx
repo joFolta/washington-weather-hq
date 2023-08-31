@@ -86,7 +86,7 @@ const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== 'open' 
     }),
 );
 
-export default function Dashboard({ children }: { children: React.ReactNode }) {
+export default function Dashboard({ isDarkMode, toggleDarkMode, children }: { isDarkMode: boolean, toggleDarkMode: () => void, children: React.ReactNode }) {
     const [open, setOpen] = React.useState(false);
 
     const toggleDrawer = () => {
@@ -149,8 +149,8 @@ export default function Dashboard({ children }: { children: React.ReactNode }) {
                     {mainListItems}
                     <Divider sx={{ my: 2 }} />
                     {/* TODO 1: dynamic link based on current url (e.g. open https://www.mountwashington.org/, or https://www.youtube.com/results?search_query=mt+washington+live, etc) */}
-                    {/* TODO 2: push this down to the bottom */}
-                    <SecondaryListItems />
+                    {/* TODO 2: push this down to the bottom ?? */}
+                    <SecondaryListItems isDarkMode={isDarkMode} toggleDarkMode={toggleDarkMode} />
                 </List>
             </Drawer>
             <Box
@@ -176,7 +176,9 @@ export default function Dashboard({ children }: { children: React.ReactNode }) {
                             flexDirection: 'column'
                         }}
                     >
-                        {children}
+                        {/* {children} */}
+                        {/* {React.cloneElement(children, { isDarkMode: isDarkMode })} */}
+                        {React.cloneElement(children, { hello: "123" })}
                     </Paper>
                     {/* </Grid>
                     </Grid> */}

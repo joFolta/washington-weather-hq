@@ -6,8 +6,13 @@ Mt Washington weather web app built with NextJS, Typescript
 
 ### Technologies used:
 - https://github.com/niutech/x-frame-bypass
-- https://mui.com/, https://github.com/mui/material-ui/tree/v5.14.7/docs/data/material/getting-started/templates/dashboard
-- https://github.com/xeoneux/next-dark-mode
+- https://mui.com/
+    - https://github.com/mui/material-ui/tree/v5.14.7/docs/data/material/getting-started/templates/dashboard
+    - https://github.com/mui/material-ui/tree/master/examples/material-ui-nextjs-ts 
+- Dark mode
+    - https://mui.com/material-ui/customization/dark-mode/
+    - https://giancarlobuomprisco.com/css/automatic-dark-mode-any-website
+    - https://www.reddit.com/r/nextjs/comments/z5dbao/how_to_manage_the_state_in_the_root_layout_in/
 
 ### Hurdles
 #### Integration issues of NextJS with MaterialUI 
