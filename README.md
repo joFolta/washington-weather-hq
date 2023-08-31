@@ -14,6 +14,9 @@ Mt Washington weather web app built with NextJS, Typescript
 - https://mui.com/material-ui/guides/next-js-app-router/ 
 - https://github.com/mui/material-ui/tree/master/examples/material-ui-nextjs-ts 
 
+### Notes
+- https://nextjs.org/docs/messages/react-client-hook-in-server-component
+
 
 
 ------------------
