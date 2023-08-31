@@ -20,6 +20,8 @@ import SupportIcon from '@mui/icons-material/Support';
 import LogoutIcon from '@mui/icons-material/Logout';
 import ThemeRegistry from '@/components/ThemeRegistry/ThemeRegistry';
 
+import Dashboard from '../components/mui-template/Dashboard'
+
 export const metadata = {
   title: 'Next.js App Router + Material UI v5',
   description: 'Next.js App Router + Material UI v5',
@@ -44,15 +46,16 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="en">
       <body>
         <ThemeRegistry>
-          <AppBar position="fixed" sx={{ zIndex: 2000 }}>
+          hello world
+          {/* <AppBar position="fixed" sx={{ zIndex: 2000 }}>
             <Toolbar sx={{ backgroundColor: 'background.paper' }}>
               <DashboardIcon sx={{ color: '#444', mr: 2, transform: 'translateY(-2px)' }} />
               <Typography variant="h6" noWrap component="div" color="black">
                 Next.js App Router
               </Typography>
             </Toolbar>
-          </AppBar>
-          <Drawer
+          </AppBar> */}
+          {/* <Drawer
             sx={{
               width: DRAWER_WIDTH,
               flexShrink: 0,
@@ -93,7 +96,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                 </ListItem>
               ))}
             </List>
-          </Drawer>
+          </Drawer> */}
           <Box
             component="main"
             sx={{
@@ -104,8 +107,12 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               p: 3,
             }}
           >
-            {children}
+            {/* {children} */}
+            <Dashboard />
           </Box>
+          {/* TODO: pass in children as a prop */}
+          {/* TODO: pass in children as a prop */}
+          {/* TODO: pass in children as a prop */}
         </ThemeRegistry>
       </body>
     </html>

@@ -1,6 +1,6 @@
 {
-  "name": "material-next-app-router-ts",
-  "version": "5.0.0",
+  "name": "washington-weather-hq",
+  "version": "0.1.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
