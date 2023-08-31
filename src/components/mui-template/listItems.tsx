@@ -1,4 +1,10 @@
 import * as React from 'react';
+import Link from 'next/link';
+import StormIcon from '@mui/icons-material/Storm';
+import PlayCircleOutlineSharpIcon from '@mui/icons-material/PlayCircleOutlineSharp';
+import OpenInBrowserSharpIcon from '@mui/icons-material/OpenInBrowserSharp';
+import DarkModeSharpIcon from '@mui/icons-material/DarkModeSharp';
+import WbSunnySharpIcon from '@mui/icons-material/WbSunnySharp';
 import ListItemButton from '@mui/material/ListItemButton';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
@@ -9,24 +15,26 @@ import PeopleIcon from '@mui/icons-material/People';
 import BarChartIcon from '@mui/icons-material/BarChart';
 import LayersIcon from '@mui/icons-material/Layers';
 import AssignmentIcon from '@mui/icons-material/Assignment';
+import ListItem from '@mui/material/ListItem';
+import Switch from '@mui/material/Switch';
 
 export const mainListItems = (
     <React.Fragment>
-        <ListItemButton>
+        <ListItemButton component={Link} href={'/'}>
             <ListItemIcon>
-                <DashboardIcon />
+                <StormIcon />
             </ListItemIcon>
-            <ListItemText primary="Dashboard" />
+            <ListItemText primary="Forecast" />
         </ListItemButton>
-        <ListItemButton>
+        <ListItemButton component={Link} href={'/live-videos'}>
             <ListItemIcon>
-                <ShoppingCartIcon />
+                <PlayCircleOutlineSharpIcon />
             </ListItemIcon>
-            <ListItemText primary="Orders" />
+            <ListItemText primary="Live Video" />
         </ListItemButton>
-        <ListItemButton>
+        <ListItemButton component={Link} href={'/tasks'}>
             <ListItemIcon>
-                <PeopleIcon />
+                😕
             </ListItemIcon>
             <ListItemText primary="Customers" />
         </ListItemButton>
@@ -45,28 +53,38 @@ export const mainListItems = (
     </React.Fragment>
 );
 
-export const secondaryListItems = (
-    <React.Fragment>
-        <ListSubheader component="div" inset>
-            Saved reports
-        </ListSubheader>
-        <ListItemButton>
-            <ListItemIcon>
-                <AssignmentIcon />
-            </ListItemIcon>
-            <ListItemText primary="Current month" />
-        </ListItemButton>
-        <ListItemButton>
-            <ListItemIcon>
-                <AssignmentIcon />
-            </ListItemIcon>
-            <ListItemText primary="Last quarter" />
-        </ListItemButton>
-        <ListItemButton>
-            <ListItemIcon>
-                <AssignmentIcon />
-            </ListItemIcon>
-            <ListItemText primary="Year-end sale" />
-        </ListItemButton>
-    </React.Fragment>
-);
+export const SecondaryListItems = () => {
+    // TODO: look into actualizing dark mode
+    const [isDarkMode, setIsDarkMode] = React.useState(false);
+
+    // TODO REMOVE LOG 
+    console.log('isDarkMode', isDarkMode);
+
+    const handleToggle = () => {
+        setIsDarkMode(!isDarkMode);
+    };
+
+    return (
+        <React.Fragment >
+            <ListItem onClick={handleToggle}>
+                <ListItemIcon>
+                    {isDarkMode ? <DarkModeSharpIcon /> : <WbSunnySharpIcon />}
+                </ListItemIcon>
+                <ListItemText id="switch-dark-mode" primary="Dark Mode" />
+                <Switch
+                    edge="end"
+                    checked={isDarkMode}
+                    inputProps={{
+                        'aria-labelledby': 'switch-dark-mode',
+                    }}
+                />
+            </ListItem>
+            <ListItemButton component={Link} href={'https://www.mountwashington.org/experience-the-weather/mount-washington-weather.aspx'}>
+                <ListItemIcon>
+                    <OpenInBrowserSharpIcon />
+                </ListItemIcon>
+                <ListItemText primary="Open Full Page" />
+            </ListItemButton>
+        </React.Fragment >
+    )
+};

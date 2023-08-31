@@ -5,19 +5,23 @@ import Typography from '@mui/material/Typography';
 
 export default function LiveVideos() {
   return (
-    <Container>
-      <Box
-        sx={{
-          display: 'flex',
-          flexDirection: 'column',
-          justifyContent: 'center',
-          alignItems: 'center',
-        }}
-      >
-        <Typography variant="body1" gutterBottom>
-          Starred Page
-        </Typography>
-      </Box>
-    </Container>
+    <>
+      <iframe
+        width="100%"
+        height="195px"
+        src="https://www.youtube-nocookie.com/embed/RUN2G9r136c?si=jd9VkaFJlNyAQfiQ"
+        title="YouTube video player" frameBorder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowFullScreen>
+      </iframe>
+      <iframe
+        width="100%"
+        height="195px"
+        src="https://www.youtube-nocookie.com/embed/5qVHjf7hKZU?si=4sFvjthHC_FVDpVL" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen></iframe>
+      <iframe
+        width="100%"
+        height="195px"
+        src="https://www.youtube-nocookie.com/embed/9cOe77NwBMk?si=-YmY2hQfQKpqEQy3" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen ></iframe >
+    </>
   );
 }

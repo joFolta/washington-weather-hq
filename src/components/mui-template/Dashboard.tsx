@@ -1,7 +1,7 @@
 "use client"
 
 import * as React from 'react';
-import { styled, createTheme, ThemeProvider } from '@mui/material/styles';
+import { styled } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
 import MuiDrawer from '@mui/material/Drawer';
 import Box from '@mui/material/Box';
@@ -19,7 +19,7 @@ import Link from '@mui/material/Link';
 import MenuIcon from '@mui/icons-material/Menu';
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import NotificationsIcon from '@mui/icons-material/Notifications';
-import { mainListItems, secondaryListItems } from './listItems';
+import { mainListItems, SecondaryListItems } from './listItems';
 import Deposits from './Deposits';
 import Orders from './Orders';
 
@@ -99,7 +99,8 @@ export default function Dashboard({ children }: { children: React.ReactNode }) {
             <AppBar position="absolute" open={open}>
                 <Toolbar
                     sx={{
-                        pr: '24px', // keep right padding when drawer closed
+                        pr: '24px', // keep right padding when drawer closed,
+                        pl: '22px'
                     }}
                 >
                     <IconButton
@@ -121,12 +122,12 @@ export default function Dashboard({ children }: { children: React.ReactNode }) {
                         noWrap
                         sx={{ flexGrow: 1 }}
                     >
-                        Dashboard
+                        Washington Weather HQ
                     </Typography>
                     <IconButton color="inherit">
-                        <Badge badgeContent={4} color="secondary">
+                        <Badge badgeContent={99} color="secondary">
                             <NotificationsIcon />
-                        </Badge>
+                        </Badge>mph
                     </IconButton>
                 </Toolbar>
             </AppBar>
@@ -135,7 +136,7 @@ export default function Dashboard({ children }: { children: React.ReactNode }) {
                     sx={{
                         display: 'flex',
                         alignItems: 'center',
-                        justifyContent: 'flex-end',
+                        justifyContent: 'flex-start',
                         px: [1],
                     }}
                 >
@@ -146,8 +147,10 @@ export default function Dashboard({ children }: { children: React.ReactNode }) {
                 <Divider />
                 <List component="nav">
                     {mainListItems}
-                    <Divider sx={{ my: 1 }} />
-                    {secondaryListItems}
+                    <Divider sx={{ my: 2 }} />
+                    {/* TODO 1: dynamic link based on current url (e.g. open https://www.mountwashington.org/, or https://www.youtube.com/results?search_query=mt+washington+live, etc) */}
+                    {/* TODO 2: push this down to the bottom */}
+                    <SecondaryListItems />
                 </List>
             </Drawer>
             <Box
@@ -163,19 +166,20 @@ export default function Dashboard({ children }: { children: React.ReactNode }) {
                 }}
             >
                 <Toolbar />
-                <Container maxWidth="lg" sx={{ mt: 4, mb: 4 }}>
-                    <Grid container spacing={3}>
-                        <Grid item>
-                            <Paper
-                                sx={{
-                                    p: 2,
-                                    display: 'flex',
-                                    flexDirection: 'column'
-                                }}
-                            >
-                                <h2>Content</h2>
-                            </Paper></Grid>
-                    </Grid>
+                <Container maxWidth="lg" sx={{ m: 0, p: 0 }}>
+                    {/* <Grid container spacing={3}>
+                        <Grid item> */}
+                    <Paper
+                        sx={{
+                            p: 0,
+                            display: 'flex',
+                            flexDirection: 'column'
+                        }}
+                    >
+                        {children}
+                    </Paper>
+                    {/* </Grid>
+                    </Grid> */}
                     {/* <Grid container spacing={3}> */}
                     {/* Chart
                         <Grid item xs={12} md={8} lg={9}>
@@ -213,6 +217,6 @@ export default function Dashboard({ children }: { children: React.ReactNode }) {
                     <Copyright sx={{ pt: 4 }} />
                 </Container>
             </Box>
-        </Box>
+        </Box >
     );
 }
