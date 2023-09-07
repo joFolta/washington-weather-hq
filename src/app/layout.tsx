@@ -25,8 +25,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body>
         <DarkModeContext.Provider value={isDarkMode}>
           <ThemeRegistry isDarkMode={isDarkMode}>
-            {/* TODO REMOVE */}
-            {/* <ForecastCountdown /> */}
             <Dashboard isDarkMode={isDarkMode} toggleDarkMode={toggleDarkMode}>{children}</Dashboard>
           </ThemeRegistry>
         </DarkModeContext.Provider>

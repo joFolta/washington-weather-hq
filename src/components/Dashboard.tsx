@@ -1,6 +1,5 @@
-"use client"
-
 import * as React from 'react';
+import dynamic from 'next/dynamic'; // https://nextjs.org/docs/pages/building-your-application/optimizing/lazy-loading#with-no-ssr
 import CssBaseline from '@mui/material/CssBaseline';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
@@ -16,7 +15,10 @@ import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import { mainListItems, SecondaryListItems } from './listItems';
 import AppBar from './AppBar';
 import Drawer from './Drawer';
-import ForecastCountdown from './ForecastCountdown';
+
+const NoSsrForecastCountdown = dynamic(() => import('./ForecastCountdown'), {
+    ssr: false,
+})
 
 function Copyright(props: any) {
     return (
@@ -43,7 +45,7 @@ export default function Dashboard({ isDarkMode, toggleDarkMode, children }: { is
     return (
         <Box sx={{ display: 'flex' }}>
             <CssBaseline />
-            <AppBar position="absolute" open={open} drawerWidth={drawerWidth}>
+            <AppBar position="absolute" open={open} drawerwidth={drawerWidth}>
                 <Toolbar
                     sx={{
                         pr: '24px', // keep right padding when drawer closed,
@@ -73,7 +75,7 @@ export default function Dashboard({ isDarkMode, toggleDarkMode, children }: { is
                     </Typography>
                 </Toolbar>
             </AppBar>
-            <Drawer variant="permanent" open={open} drawerWidth={drawerWidth}>
+            <Drawer variant="permanent" open={open} drawerwidth={drawerWidth}>
                 <Toolbar
                     sx={{
                         display: 'flex',
@@ -85,7 +87,7 @@ export default function Dashboard({ isDarkMode, toggleDarkMode, children }: { is
                     <IconButton onClick={toggleDrawer}>
                         <ChevronLeftIcon />
                     </IconButton>
-                    <ForecastCountdown />
+                    <NoSsrForecastCountdown />
                 </Toolbar>
                 <Divider />
                 <List component="nav">

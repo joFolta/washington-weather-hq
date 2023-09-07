@@ -15,6 +15,7 @@
     "@emotion/styled": "latest",
     "@mui/icons-material": "latest",
     "@mui/material": "latest",
+    "moment-timezone": "^0.5.43",
     "next": "13.x",
     "react": "18.x",
     "react-countdown-simple": "^1.0.12",

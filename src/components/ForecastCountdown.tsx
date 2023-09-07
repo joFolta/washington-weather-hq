@@ -1,18 +1,41 @@
-import Countdown from "react-countdown-simple";
 import * as React from 'react';
+import moment from 'moment-timezone';
+import Countdown from "react-countdown-simple";
+import Button from '@mui/material/Button';
+import Tooltip from '@mui/material/Tooltip';
 
-// TODO get EST ZONE
-// show time remaining to 4pm/4am
-// on hover, show "Time remaining until forecast update: 4am or 4pm Eastern Standard Time"
-// only show time when sidebar is open (include label underneath)
-const twelveHours = new Date(
-    new Date().setHours(new Date().getHours() + 12)
-).toISOString();
+function findFourToCountDownTo(fourAmEST: string, fourPmEST: string) {
+    const timeDiff = moment(fourAmEST).diff(fourPmEST, 'seconds')
+    return timeDiff === Math.abs(timeDiff) ? fourPmEST : fourAmEST
+}
 
 function ForecastCountdown() {
+    // TODO REMOVE
+    // const tenSeconds = new Date(
+    //     new Date().setSeconds(new Date().getSeconds() + 100000)
+    // ).toISOString();
+
+    // // TODO ensure we are always using EST ZONE
+
+    // const fourAmEST = moment().tz("America/New_York").set({ "hour": 23, "minute": 10 }).toISOString();
+    // // TODO REMOVE LOG 
+    // console.log('fourAmEST 1', fourAmEST);
+    // // TODO REMOVE LOG 
+    // console.log('fourAmEST 2', moment().set({ "hour": 23, "minute": 10 }).format());
+    // const currentTimeEST = moment().tz("America/New_York").toISOString()
+
+    const fourAmEST = (moment().hour(24).minute(0).second(0)).toISOString()
+    const fourPmEST = (moment().hour(16).minute(0).second(0)).toISOString()
+    const fourToCountDownTo = findFourToCountDownTo(fourAmEST, fourPmEST)
+
+    // TODO REMOVE LOG 
+    // console.log('fourToCountDownTo', fourToCountDownTo);
+
     return (
         <Countdown
-            targetDate={twelveHours}
+            targetDate={fourToCountDownTo}
+            // TODO REMOVE
+            // targetDate={tenSeconds}
             renderer={({ hours, minutes, seconds }) => (
                 <div style={{ fontSize: "14px", color: "#b9101e", fontWeight: "500", marginLeft: "20px" }}>
                     {hours}:{minutes}:{seconds}
@@ -22,11 +45,34 @@ function ForecastCountdown() {
     );
 }
 
-export default function CountdownContainer() {
+export default function CountdownContainer({ }) {
+    const [isToolltipOpen, setIsToolTipOpen] = React.useState(false);
+
+    const handleTooltipClose = () => {
+        setIsToolTipOpen(false);
+    };
+
+    const handleTooltipOpen = () => {
+        setIsToolTipOpen(true);
+    };
+
     return (
         <div>
             <ForecastCountdown />
-            <p style={{ display: "inline", fontSize: "10px", marginLeft: "8px" }}>[&nbsp;&nbsp;next&nbsp;forecast&nbsp;&nbsp;]</p>
+            <Tooltip
+                open={isToolltipOpen}
+                onOpen={handleTooltipOpen}
+                onClose={handleTooltipClose}
+                title="Updates ~4am/4pm Eastern Standard Time"
+            >
+                <Button
+                    onClick={handleTooltipOpen}
+                    style={{ display: "inline", fontSize: "10px", marginLeft: "8px", border: "none", padding: "0", textTransform: 'none' }}
+                    tabIndex={-1}
+                >
+                    [&nbsp;&nbsp;next&nbsp;forecast&nbsp;&nbsp;]
+                </Button>
+            </Tooltip>
         </div>
     )
 }
