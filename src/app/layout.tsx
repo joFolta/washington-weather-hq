@@ -3,7 +3,8 @@
 import * as React from 'react';
 import type { Metadata } from 'next'
 import ThemeRegistry from '@/components/ThemeRegistry/ThemeRegistry';
-import Dashboard from '../components/mui-template/Dashboard'
+import Dashboard from '../components/Dashboard'
+// import ForecastCountdown from '@/components/ForecastCountdown';
 
 export const metadata: Metadata = {
   title: 'Washington Weather HQ',
@@ -24,6 +25,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body>
         <DarkModeContext.Provider value={isDarkMode}>
           <ThemeRegistry isDarkMode={isDarkMode}>
+            {/* TODO REMOVE */}
+            {/* <ForecastCountdown /> */}
             <Dashboard isDarkMode={isDarkMode} toggleDarkMode={toggleDarkMode}>{children}</Dashboard>
           </ThemeRegistry>
         </DarkModeContext.Provider>

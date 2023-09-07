@@ -17,6 +17,7 @@
     "@mui/material": "latest",
     "next": "13.x",
     "react": "18.x",
+    "react-countdown-simple": "^1.0.12",
     "react-dom": "18.x"
   },
   "devDependencies": {
