@@ -4,38 +4,26 @@ import Countdown from "react-countdown-simple";
 import Button from '@mui/material/Button';
 import Tooltip from '@mui/material/Tooltip';
 
-function findFourToCountDownTo(fourAmEST: string, fourPmEST: string) {
-    const timeDiff = moment(fourAmEST).diff(fourPmEST, 'seconds')
-    return timeDiff === Math.abs(timeDiff) ? fourPmEST : fourAmEST
+function findFourToCountDownTo() {
+    const currentTime = moment().toISOString()
+
+    const fourAmToday = (moment().day(1).hour(4).minute(0).second(0)).toISOString();
+    const fourAmNextDay = (moment().day(2).hour(4).minute(0).second(0)).toISOString()
+    const fourAmToUse = moment(fourAmToday).diff(currentTime, 'seconds') < 0 ? fourAmNextDay : fourAmToday;
+
+    const fourPmToday = (moment().day(1).hour(16).minute(0).second(0)).toISOString();
+    const fourPmNextDay = (moment().day(2).hour(16).minute(0).second(0)).toISOString()
+    const fourPmToUse = moment(fourPmToday).diff(currentTime, 'seconds') < 0 ? fourPmNextDay : fourPmToday;
+
+    return moment(fourAmToUse).diff(currentTime, 'seconds') > moment(fourPmToUse).diff(currentTime, 'seconds') ? fourPmToUse : fourAmToUse;
 }
 
 function ForecastCountdown() {
-    // TODO REMOVE
-    // const tenSeconds = new Date(
-    //     new Date().setSeconds(new Date().getSeconds() + 100000)
-    // ).toISOString();
-
-    // // TODO ensure we are always using EST ZONE
-
-    // const fourAmEST = moment().tz("America/New_York").set({ "hour": 23, "minute": 10 }).toISOString();
-    // // TODO REMOVE LOG 
-    // console.log('fourAmEST 1', fourAmEST);
-    // // TODO REMOVE LOG 
-    // console.log('fourAmEST 2', moment().set({ "hour": 23, "minute": 10 }).format());
-    // const currentTimeEST = moment().tz("America/New_York").toISOString()
-
-    const fourAmEST = (moment().hour(24).minute(0).second(0)).toISOString()
-    const fourPmEST = (moment().hour(16).minute(0).second(0)).toISOString()
-    const fourToCountDownTo = findFourToCountDownTo(fourAmEST, fourPmEST)
-
-    // TODO REMOVE LOG 
-    // console.log('fourToCountDownTo', fourToCountDownTo);
+    const fourToCountDownTo = findFourToCountDownTo()
 
     return (
         <Countdown
             targetDate={fourToCountDownTo}
-            // TODO REMOVE
-            // targetDate={tenSeconds}
             renderer={({ hours, minutes, seconds }) => (
                 <div style={{ fontSize: "14px", color: "#b9101e", fontWeight: "500", marginLeft: "20px" }}>
                     {hours}:{minutes}:{seconds}

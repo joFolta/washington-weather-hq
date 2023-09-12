@@ -2,6 +2,9 @@ import * as React from 'react';
 import Link from 'next/link';
 import StormIcon from '@mui/icons-material/Storm';
 import PlayCircleOutlineSharpIcon from '@mui/icons-material/PlayCircleOutlineSharp';
+import LandscapeIcon from '@mui/icons-material/Landscape';
+import HikingIcon from '@mui/icons-material/Hiking';
+import SevereColdIcon from '@mui/icons-material/SevereCold';
 import OpenInBrowserSharpIcon from '@mui/icons-material/OpenInBrowserSharp';
 import DarkModeSharpIcon from '@mui/icons-material/DarkModeSharp';
 import WbSunnySharpIcon from '@mui/icons-material/WbSunnySharp';
@@ -19,31 +22,35 @@ export const mainListItems = (
             <ListItemIcon>
                 <StormIcon />
             </ListItemIcon>
-            <ListItemText primary="Forecast" />
+            <ListItemText primary="Daily Forecast" />
+        </ListItemButton>
+        <ListItemButton component={Link} href={'/higher-summits'}>
+            <ListItemIcon>
+                <LandscapeIcon />
+            </ListItemIcon>
+            <ListItemText primary="Multiday Cast" />
+            {/* TODO: create sub-bullets */}
+            {/* ------------ Higher Summit Forecast (2 day) */}
+            {/* ------------ Link out to Mt-Forecast.com */}
+            {/* ------------ Link out to https://www.google.com/search?q=sargents+purchase+weather */}
         </ListItemButton>
         <ListItemButton component={Link} href={'/live-videos'}>
             <ListItemIcon>
                 <PlayCircleOutlineSharpIcon />
             </ListItemIcon>
-            <ListItemText primary="Live Video" />
-        </ListItemButton>
-        <ListItemButton component={Link} href={'/tasks'}>
-            <ListItemIcon>
-                😕
-            </ListItemIcon>
-            <ListItemText primary="Customers" />
+            <ListItemText primary="Live Feeds" />
         </ListItemButton>
         <ListItemButton>
             <ListItemIcon>
-                <BarChartIcon />
+                <HikingIcon />
             </ListItemIcon>
-            <ListItemText primary="Reports" />
+            <ListItemText primary="Intense Trails" />
         </ListItemButton>
         <ListItemButton>
             <ListItemIcon>
-                <LayersIcon />
+                <SevereColdIcon />
             </ListItemIcon>
-            <ListItemText primary="Integrations" />
+            <ListItemText primary="Sagely Advice" />
         </ListItemButton>
     </React.Fragment>
 );
