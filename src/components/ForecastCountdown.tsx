@@ -7,19 +7,18 @@ import Tooltip from '@mui/material/Tooltip';
 function findFourToCountDownTo() {
     const currentTime = moment().toISOString()
 
-    const fourAmToday = (moment().day(1).hour(4).minute(0).second(0)).toISOString();
-    const fourAmNextDay = (moment().day(2).hour(4).minute(0).second(0)).toISOString()
+    const fourAmToday = (moment().day(2).hour(4).minute(0).second(0)).toISOString();
+    const fourAmNextDay = (moment().day(3).hour(4).minute(0).second(0)).toISOString()
     const fourAmToUse = moment(fourAmToday).diff(currentTime, 'seconds') < 0 ? fourAmNextDay : fourAmToday;
 
-    const fourPmToday = (moment().day(1).hour(16).minute(0).second(0)).toISOString();
-    const fourPmNextDay = (moment().day(2).hour(16).minute(0).second(0)).toISOString()
+    const fourPmToday = (moment().day(2).hour(16).minute(0).second(0)).toISOString();
+    const fourPmNextDay = (moment().day(3).hour(16).minute(0).second(0)).toISOString()
     const fourPmToUse = moment(fourPmToday).diff(currentTime, 'seconds') < 0 ? fourPmNextDay : fourPmToday;
-
     return moment(fourAmToUse).diff(currentTime, 'seconds') > moment(fourPmToUse).diff(currentTime, 'seconds') ? fourPmToUse : fourAmToUse;
 }
 
 function ForecastCountdown() {
-    const fourToCountDownTo = findFourToCountDownTo()
+    const fourToCountDownTo = findFourToCountDownTo();
 
     return (
         <Countdown
