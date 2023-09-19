@@ -12,7 +12,7 @@ import Paper from '@mui/material/Paper';
 import Link from '@mui/material/Link';
 import MenuIcon from '@mui/icons-material/Menu';
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
-import { mainListItems, SecondaryListItems } from './listItems';
+import { MainListItems, SecondaryListItems } from './listItems';
 import AppBar from './AppBar';
 import Drawer from './Drawer';
 
@@ -36,16 +36,20 @@ function Copyright(props: any) {
 const drawerWidth: number = 240;
 
 export default function Dashboard({ isDarkMode, toggleDarkMode, children }: { isDarkMode: boolean, toggleDarkMode: () => void, children: React.ReactNode }) {
-    const [open, setOpen] = React.useState(false);
-
+    const [drawerOpen, setDrawerOpen] = React.useState(false);
     const toggleDrawer = () => {
-        setOpen(!open);
+        setDrawerOpen(!drawerOpen);
+    };
+
+    const [nestedListOpen, setNestedListOpen] = React.useState(false);
+    const handleClickOpenNestedList = () => {
+        setNestedListOpen(!nestedListOpen);
     };
 
     return (
         <Box sx={{ display: 'flex' }}>
             <CssBaseline />
-            <AppBar position="absolute" open={open} drawerwidth={drawerWidth}>
+            <AppBar position="absolute" open={drawerOpen} drawerwidth={drawerWidth}>
                 <Toolbar
                     sx={{
                         pr: '24px', // keep right padding when drawer closed,
@@ -59,7 +63,7 @@ export default function Dashboard({ isDarkMode, toggleDarkMode, children }: { is
                         onClick={toggleDrawer}
                         sx={{
                             marginRight: '36px',
-                            ...(open && { display: 'none' }),
+                            ...(drawerOpen && { display: 'none' }),
                         }}
                     >
                         <MenuIcon />
@@ -75,7 +79,7 @@ export default function Dashboard({ isDarkMode, toggleDarkMode, children }: { is
                     </Typography>
                 </Toolbar>
             </AppBar>
-            <Drawer variant="permanent" open={open} drawerwidth={drawerWidth}>
+            <Drawer variant="permanent" open={drawerOpen} drawerwidth={drawerWidth}>
                 <Toolbar
                     sx={{
                         display: 'flex',
@@ -91,7 +95,7 @@ export default function Dashboard({ isDarkMode, toggleDarkMode, children }: { is
                 </Toolbar>
                 <Divider />
                 <List component="nav">
-                    {mainListItems}
+                    <MainListItems nestedListOpen={nestedListOpen} handleClickOpenNestedList={handleClickOpenNestedList} toggleDrawer={toggleDrawer} />
                     <Divider sx={{ my: 2 }} />
                     <SecondaryListItems isDarkMode={isDarkMode} toggleDarkMode={toggleDarkMode} />
                 </List>
