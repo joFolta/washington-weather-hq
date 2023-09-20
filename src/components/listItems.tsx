@@ -55,31 +55,30 @@ export const MainListItems = ({ nestedListOpen, handleClickOpenNestedList, toggl
                 </ListItemIcon>
                 <ListItemText primary="Multiday Cast" />
                 {nestedListOpen ? <ExpandLess /> : <ExpandMore />}
-                {/* TODO: fix sub-bullet spacing when mobile screensize */}
             </ListItemButton>
             <Collapse in={nestedListOpen} timeout="auto" unmountOnExit>
                 <List component="div" disablePadding>
-                    <ListItemButton sx={{ pl: 4 }} component={Link} href={'/multiday-forecast'}>
+                    <ListItemButton sx={{ pl: 3 }} component={Link} href={'/multiday-forecast'}>
                         <ListItemIcon>
                             <LandscapeIcon />
                         </ListItemIcon>
                         <ListItemText primary="Higher Summits" />
                     </ListItemButton>
-                    <ListItemButton sx={{ pl: 4 }} target="_blank"
+                    <ListItemButton sx={{ pl: 3 }} target="_blank"
                         variant="contained" component={Link} href={'https://www.mountain-forecast.com/peaks/Mount-Washington-2/forecasts/1917'}>
                         <ListItemIcon>
                             <TravelExploreIcon />
                         </ListItemIcon>
                         <ListItemText primary="Mtn-Forecast" />
-                        <LaunchIcon fontSize='xsmall' />
+                        {/* <LaunchIcon fontSize='xsmall' /> */}
                     </ListItemButton>
-                    <ListItemButton sx={{ pl: 4 }} target="_blank"
+                    <ListItemButton sx={{ pl: 3 }} target="_blank"
                         variant="contained" component={Link} href={'https://www.google.com/search?q=sargents+purchase+weather#kp-wp-tab-overview'}>
                         <ListItemIcon>
                             <AirIcon />
                         </ListItemIcon>
                         <ListItemText primary="Weather.com" />
-                        <LaunchIcon fontSize='xsmall' />
+                        {/* <LaunchIcon fontSize='xsmall' /> */}
                     </ListItemButton>
                 </List>
             </Collapse>
@@ -89,17 +88,11 @@ export const MainListItems = ({ nestedListOpen, handleClickOpenNestedList, toggl
                 </ListItemIcon>
                 <ListItemText primary="Live Feeds" />
             </ListItemButton>
-            <ListItemButton>
+            <ListItemButton component={Link} href={'/hiking'}>
                 <ListItemIcon>
                     <HikingIcon />
                 </ListItemIcon>
-                <ListItemText primary="Intense Trails" />
-            </ListItemButton>
-            <ListItemButton>
-                <ListItemIcon>
-                    <SevereColdIcon />
-                </ListItemIcon>
-                <ListItemText primary="Sagely Advice" />
+                <ListItemText primary="Trails" />
             </ListItemButton>
         </React.Fragment>
     )
@@ -108,7 +101,7 @@ export const MainListItems = ({ nestedListOpen, handleClickOpenNestedList, toggl
 export const SecondaryListItems = ({ isDarkMode, toggleDarkMode }: { isDarkMode: boolean, toggleDarkMode: () => void }) => {
     return (
         <React.Fragment >
-            <ListItem onClick={toggleDarkMode}>
+            <ListItemButton onClick={toggleDarkMode}>
                 <ListItemIcon>
                     {isDarkMode ? <DarkModeSharpIcon /> : <WbSunnySharpIcon />}
                 </ListItemIcon>
@@ -120,13 +113,13 @@ export const SecondaryListItems = ({ isDarkMode, toggleDarkMode }: { isDarkMode:
                         'aria-labelledby': 'switch-dark-mode',
                     }}
                 />
-            </ListItem>
-            <ListItemButton component={Link} href={'https://www.mountwashington.org/experience-the-weather/mount-washington-weather.aspx'}>
+            </ListItemButton>
+            {/* <ListItemButton component={Link} href={'https://www.mountwashington.org/experience-the-weather/mount-washington-weather.aspx'}>
                 <ListItemIcon>
                     <OpenInBrowserSharpIcon />
                 </ListItemIcon>
                 <ListItemText primary="Open Full Page" />
-            </ListItemButton>
+            </ListItemButton> */}
         </React.Fragment >
     )
 };
