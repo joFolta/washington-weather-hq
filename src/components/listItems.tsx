@@ -4,43 +4,26 @@ import StormIcon from '@mui/icons-material/Storm';
 import PlayCircleOutlineSharpIcon from '@mui/icons-material/PlayCircleOutlineSharp';
 import LandscapeIcon from '@mui/icons-material/Landscape';
 import HikingIcon from '@mui/icons-material/Hiking';
-import SevereColdIcon from '@mui/icons-material/SevereCold';
-import OpenInBrowserSharpIcon from '@mui/icons-material/OpenInBrowserSharp';
 import DarkModeSharpIcon from '@mui/icons-material/DarkModeSharp';
 import WbSunnySharpIcon from '@mui/icons-material/WbSunnySharp';
 import ListItemButton from '@mui/material/ListItemButton';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
-import BarChartIcon from '@mui/icons-material/BarChart';
-import LayersIcon from '@mui/icons-material/Layers';
-import ListItem from '@mui/material/ListItem';
 import Switch from '@mui/material/Switch';
-
-
-import ListSubheader from '@mui/material/ListSubheader';
 import List from '@mui/material/List';
 
 import Collapse from '@mui/material/Collapse';
-import InboxIcon from '@mui/icons-material/MoveToInbox';
-import DraftsIcon from '@mui/icons-material/Drafts';
-import SendIcon from '@mui/icons-material/Send';
 import ExpandLess from '@mui/icons-material/ExpandLess';
 import ExpandMore from '@mui/icons-material/ExpandMore';
-import StarBorder from '@mui/icons-material/StarBorder';
-import LaunchIcon from '@mui/icons-material/Launch';
 import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
-import FilterDramaIcon from '@mui/icons-material/FilterDrama';
 import AirIcon from '@mui/icons-material/Air';
 import TravelExploreIcon from '@mui/icons-material/TravelExplore';
 
-export const MainListItems = ({ nestedListOpen, handleClickOpenNestedList, toggleDrawer }) => {
+export const MainListItems = ({ nestedListOpen, handleClickOpenNestedList }: { nestedListOpen: boolean, handleClickOpenNestedList: () => void }) => {
     const handleClick = () => {
-        // if (nestedListOpen) {
-        // toggleDrawer();
         handleClickOpenNestedList();
-        // }
-
     }
+
     return (
         <React.Fragment>
             <ListItemButton component={Link} href={'/'}>
@@ -65,20 +48,18 @@ export const MainListItems = ({ nestedListOpen, handleClickOpenNestedList, toggl
                         <ListItemText primary="Higher Summits" />
                     </ListItemButton>
                     <ListItemButton sx={{ pl: 3 }} target="_blank"
-                        variant="contained" component={Link} href={'https://www.mountain-forecast.com/peaks/Mount-Washington-2/forecasts/1917'}>
+                        component={Link} href={'https://www.mountain-forecast.com/peaks/Mount-Washington-2/forecasts/1917'}>
                         <ListItemIcon>
                             <TravelExploreIcon />
                         </ListItemIcon>
                         <ListItemText primary="Mtn-Forecast" />
-                        {/* <LaunchIcon fontSize='xsmall' /> */}
                     </ListItemButton>
                     <ListItemButton sx={{ pl: 3 }} target="_blank"
-                        variant="contained" component={Link} href={'https://www.google.com/search?q=sargents+purchase+weather#kp-wp-tab-overview'}>
+                        component={Link} href={'https://www.google.com/search?q=sargents+purchase+weather#kp-wp-tab-overview'}>
                         <ListItemIcon>
                             <AirIcon />
                         </ListItemIcon>
                         <ListItemText primary="Weather.com" />
-                        {/* <LaunchIcon fontSize='xsmall' /> */}
                     </ListItemButton>
                 </List>
             </Collapse>
@@ -92,7 +73,7 @@ export const MainListItems = ({ nestedListOpen, handleClickOpenNestedList, toggl
                 <ListItemIcon>
                     <HikingIcon />
                 </ListItemIcon>
-                <ListItemText primary="Trails" />
+                <ListItemText primary="Hiking" />
             </ListItemButton>
         </React.Fragment>
     )
@@ -114,12 +95,6 @@ export const SecondaryListItems = ({ isDarkMode, toggleDarkMode }: { isDarkMode:
                     }}
                 />
             </ListItemButton>
-            {/* <ListItemButton component={Link} href={'https://www.mountwashington.org/experience-the-weather/mount-washington-weather.aspx'}>
-                <ListItemIcon>
-                    <OpenInBrowserSharpIcon />
-                </ListItemIcon>
-                <ListItemText primary="Open Full Page" />
-            </ListItemButton> */}
         </React.Fragment >
     )
 };

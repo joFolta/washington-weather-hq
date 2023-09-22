@@ -8,13 +8,12 @@ import SmartphoneIcon from '@mui/icons-material/Smartphone';
 export default function HikingInfo() {
   return (
     <div>
-      {/* <h1>Hiking Information</h1> */}
+      <h1 style={{ fontSize: "30px", marginBottom: "25px" }}>🏞 Hiking Information</h1 >
 
       <h2>❤️ Hike Safe</h2>
       <ol style={{
         listStyle: "none",
         paddingLeft: "52px",
-        // margin: "0"
       }}>
         <li style={{ paddingBottom: "10px", lineHeight: "22px", textIndent: "-2em" }}>❄️&nbsp;&nbsp;&nbsp;Stay up-to-date on lastest forecast and dress appropriately for harsh summit conditions        <Link href="https://sectionhiker.com/sectionhiker-gear-guide/recommended-winter-hiking-gear-list/" target="_blank" rel="noopener noreferrer">(Winter Gear List)</Link></li>
         <li style={{ paddingBottom: "10px", lineHeight: "22px", textIndent: "-2em" }}>&nbsp;🚶🏿&nbsp;&nbsp;&nbsp;Download trails ahead of time and ensure they work offline (w/o cell signal). Have a backup navigation system (e.g. map/compass, <Link href="https://www.garmin.com/en-US/p/621802" target="_blank" rel="noopener noreferrer">GPS watch</Link>)</li>
@@ -24,7 +23,6 @@ export default function HikingInfo() {
         <li style={{ paddingBottom: "10px", lineHeight: "22px", textIndent: "-2em" }}>⛰️&nbsp;&nbsp;When in doubt, turn around; the mountain will be there for another day</li>
       </ol>
 
-      {/* <hr /> */}
 
       <h2>🥾 Trails To Try</h2>
       <ol>
@@ -33,7 +31,6 @@ export default function HikingInfo() {
         <li><h3 style={{ fontSize: "18px", marginTop: "14px" }}><Link href="https://www.alltrails.com/parks/us/new-hampshire/white-mountain-national-forest--3" target="_blank" rel="noopener noreferrer">AllTrails</Link><Link href="#warning"> *</Link></h3></li>
       </ol>
 
-      {/* <hr /> */}
 
       <h2 style={{ marginTop: "45px" }}>📱 GPS Trail Apps</h2>
       <ol>
@@ -67,11 +64,6 @@ export default function HikingInfo() {
           </ul>
         </li>
       </ol>
-
-
-
-
-
     </div >
   );
 }

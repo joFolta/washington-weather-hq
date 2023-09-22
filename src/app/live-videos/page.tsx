@@ -6,28 +6,28 @@ import Typography from '@mui/material/Typography';
 export default function LiveVideos() {
   return (
     <>
-      <h2>🎦 Live Video Feeds</h2>
+      <h1 style={{ fontSize: "30px", marginBottom: "25px" }}>📽 Live Video Feeds</h1>
       <iframe
         width="100%"
         height="195px"
         src="https://www.youtube-nocookie.com/embed/RUN2G9r136c?si=jd9VkaFJlNyAQfiQ"
         title="YouTube video player" frameBorder="0"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-        allowFullScreen>
-      </iframe>
+        allowFullScreen
+      />
       <iframe
         width="100%"
         height="195px"
-        src="https://www.youtube-nocookie.com/embed/5qVHjf7hKZU?si=4sFvjthHC_FVDpVL" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen></iframe>
+        src="https://www.youtube-nocookie.com/embed/5qVHjf7hKZU?si=4sFvjthHC_FVDpVL" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen />
       <iframe
         width="100%"
         height="195px"
-        src="https://www.youtube.com/embed/jzjLn4LEyjg?si=Ebr2AcuMvzK2wod4" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen ></iframe >
+        src="https://www.youtube.com/embed/jzjLn4LEyjg?si=Ebr2AcuMvzK2wod4" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen />
       {/* TODO: This video feed is currently off. Uncomment when back on. */}
       {/* <iframe
         width="100%"
         height="195px"
-        src="https://www.youtube.com/embed/I9Lg1IiuupA?si=-r7bKrgL1tv6mw5s" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen ></iframe > */}
+        src="https://www.youtube.com/embed/I9Lg1IiuupA?si=-r7bKrgL1tv6mw5s" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen /> */}
     </>
   );
 }

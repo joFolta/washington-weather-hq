@@ -1,6 +1,5 @@
 import * as React from 'react';
 import dynamic from 'next/dynamic'; // https://nextjs.org/docs/pages/building-your-application/optimizing/lazy-loading#with-no-ssr
-import CssBaseline from '@mui/material/CssBaseline';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
 import List from '@mui/material/List';
@@ -48,7 +47,6 @@ export default function Dashboard({ isDarkMode, toggleDarkMode, children }: { is
 
     return (
         <Box sx={{ display: 'flex' }}>
-            <CssBaseline />
             <AppBar position="absolute" open={drawerOpen} drawerwidth={drawerWidth}>
                 <Toolbar
                     sx={{
@@ -95,7 +93,7 @@ export default function Dashboard({ isDarkMode, toggleDarkMode, children }: { is
                 </Toolbar>
                 <Divider />
                 <List component="nav">
-                    <MainListItems nestedListOpen={nestedListOpen} handleClickOpenNestedList={handleClickOpenNestedList} toggleDrawer={toggleDrawer} />
+                    <MainListItems nestedListOpen={nestedListOpen} handleClickOpenNestedList={handleClickOpenNestedList} />
                     <Divider sx={{ my: 2 }} />
                     <SecondaryListItems isDarkMode={isDarkMode} toggleDarkMode={toggleDarkMode} />
                 </List>

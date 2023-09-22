@@ -4,7 +4,6 @@ import * as React from 'react';
 import type { Metadata } from 'next'
 import ThemeRegistry from '@/components/ThemeRegistry/ThemeRegistry';
 import Dashboard from '../components/Dashboard'
-// import ForecastCountdown from '@/components/ForecastCountdown';
 
 export const metadata: Metadata = {
   title: 'Washington Weather HQ',
