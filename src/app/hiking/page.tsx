@@ -15,8 +15,8 @@ export default function HikingInfo() {
         listStyle: "none",
         paddingLeft: "52px",
       }}>
-        <li style={{ paddingBottom: "10px", lineHeight: "22px", textIndent: "-2em" }}>❄️&nbsp;&nbsp;&nbsp;Stay up-to-date on lastest forecast and dress appropriately for harsh summit conditions        <Link href="https://sectionhiker.com/sectionhiker-gear-guide/recommended-winter-hiking-gear-list/" target="_blank" rel="noopener noreferrer">(Winter Gear List)</Link></li>
-        <li style={{ paddingBottom: "10px", lineHeight: "22px", textIndent: "-2em" }}>&nbsp;🚶🏿&nbsp;&nbsp;&nbsp;Download trails ahead of time and ensure they work offline (w/o cell signal). Have a backup navigation system (e.g. map/compass, <Link href="https://www.garmin.com/en-US/p/621802" target="_blank" rel="noopener noreferrer">GPS watch</Link>)</li>
+        <li style={{ paddingBottom: "10px", lineHeight: "22px", textIndent: "-2em" }}>❄️&nbsp;&nbsp;&nbsp;Stay up-to-date on lastest forecast and dress appropriately for harsh summit conditions        <Link href="https://sectionhiker.com/sectionhiker-gear-guide/recommended-winter-hiking-gear-list/" >(Winter Gear List)</Link></li>
+        <li style={{ paddingBottom: "10px", lineHeight: "22px", textIndent: "-2em" }}>&nbsp;🚶🏿&nbsp;&nbsp;&nbsp;Download trails ahead of time and ensure they work offline (w/o cell signal). Have a backup navigation system (e.g. map/compass, <Link href="https://www.garmin.com/en-US/p/621802" >GPS watch</Link>)</li>
         <li style={{ paddingBottom: "10px", lineHeight: "22px", textIndent: "-2em" }}>✈️&nbsp;&nbsp;Turn on airplane mode to conserve phone battery</li>
         <li style={{ paddingBottom: "10px", lineHeight: "22px", textIndent: "-2em" }}>👪&nbsp;&nbsp;Tell family/friends which trail you are doing</li>
         <li style={{ paddingBottom: "10px", lineHeight: "22px", textIndent: "-2em" }}>🎸&nbsp;&nbsp;Solo hiking is an adventure you should try after you are experienced, but pairing up is always safer</li>
@@ -26,16 +26,16 @@ export default function HikingInfo() {
 
       <h2>🥾 Trails To Try</h2>
       <ol>
-        <li><h3 style={{ fontSize: "18px", marginBottom: "14px" }}><Link href="https://www.hikingproject.com/directory/8011666/white-mountain-region" target="_blank" rel="noopener noreferrer">Hiking Project</Link></h3></li>
-        <li><h3 style={{ fontSize: "18px", marginTop: "14px", marginBottom: "14px" }}><Link href="https://newenglandwaterfalls.com/terrifying25.php" target="_blank" rel="noopener noreferrer">Terrifying 25</Link></h3></li>
-        <li><h3 style={{ fontSize: "18px", marginTop: "14px" }}><Link href="https://www.alltrails.com/parks/us/new-hampshire/white-mountain-national-forest--3" target="_blank" rel="noopener noreferrer">AllTrails</Link><Link href="#warning"> *</Link></h3></li>
+        <li><h3 style={{ fontSize: "18px", marginBottom: "14px" }}><Link href="https://www.hikingproject.com/directory/8011666/white-mountain-region" >Hiking Project</Link></h3></li>
+        <li><h3 style={{ fontSize: "18px", marginTop: "14px", marginBottom: "14px" }}><Link href="https://newenglandwaterfalls.com/terrifying25.php" >Terrifying 25</Link></h3></li>
+        <li><h3 style={{ fontSize: "18px", marginTop: "14px" }}><Link href="https://www.alltrails.com/parks/us/new-hampshire/white-mountain-national-forest--3" >AllTrails</Link><Link href="#warning"> *</Link></h3></li>
       </ol>
 
 
       <h2 style={{ marginTop: "45px" }}>📱 GPS Trail Apps</h2>
       <ol>
         <li>
-          <h3 id="Hiking Project"><Link href="https://www.hikingproject.com/" target="_blank" rel="noopener noreferrer">Hiking Project</Link></h3>
+          <h3 id="Hiking Project"><Link href="https://www.hikingproject.com/" >Hiking Project</Link></h3>
           <h4 style={{ marginBottom: "0px" }}>Pros: </h4>
           <ul>
             <li>Entire trail systems by U.S. State can be predownload for no cell service</li>
@@ -48,7 +48,7 @@ export default function HikingInfo() {
           </ul>
         </li>
         <li>
-          <h3 id="AllTrails" style={{ marginBottom: "0px" }}><Link href="https://www.alltrails.com/" target="_blank" rel="noopener noreferrer">AllTrails</Link></h3>
+          <h3 id="AllTrails" style={{ marginBottom: "0px" }}><Link href="https://www.alltrails.com/" >AllTrails</Link></h3>
           <b id="warning" style={{ color: "#b9101e", fontSize: "14px" }}><p style={{ margin: "0" }}>*WARNING: YOU COULD GET LOST!</p><p style={{ margin: "0" }}>Loss of cell service w/o downloading a trail ahead of time, requiring $ AllTrails pro membership</p></b>
 
           <h4 style={{ marginBottom: "0px" }}>Pros: </h4>

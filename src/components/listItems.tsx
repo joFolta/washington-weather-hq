@@ -47,14 +47,14 @@ export const MainListItems = ({ nestedListOpen, handleClickOpenNestedList }: { n
                         </ListItemIcon>
                         <ListItemText primary="Higher Summits" />
                     </ListItemButton>
-                    <ListItemButton sx={{ pl: 3 }} target="_blank"
+                    <ListItemButton sx={{ pl: 3 }}
                         component={Link} href={'https://www.mountain-forecast.com/peaks/Mount-Washington-2/forecasts/1917'}>
                         <ListItemIcon>
                             <TravelExploreIcon />
                         </ListItemIcon>
                         <ListItemText primary="Mtn-Forecast" />
                     </ListItemButton>
-                    <ListItemButton sx={{ pl: 3 }} target="_blank"
+                    <ListItemButton sx={{ pl: 3 }}
                         component={Link} href={'https://www.google.com/search?q=sargents+purchase+weather#kp-wp-tab-overview'}>
                         <ListItemIcon>
                             <AirIcon />

@@ -4,39 +4,26 @@ import Countdown from "react-countdown-simple";
 import Button from '@mui/material/Button';
 import Tooltip from '@mui/material/Tooltip';
 
-function findFourToCountDownTo() {
+/**
+ * Mt Washington Observatory updates roughly 4am/4pm Eastern Standard Time
+ * @returns {String} time to count down to
+ */
+export function findFourToCountDownTo() {
     const currentTime = moment().toISOString()
 
-    // TODO REMOVE LOG 
-    console.log('currentTime', currentTime);
-
-    const fourAmToday = (moment().day(3).hour(4).minute(0).second(0)).toISOString();
-    const fourAmNextDay = (moment().day(4).hour(4).minute(0).second(0)).toISOString()
+    const fourAmToday = (moment().hour(4).minute(0).second(0)).toISOString();
+    const fourAmNextDay = (moment().hour(4).minute(0).second(0).add(1, 'days')).toISOString()
     const fourAmToUse = moment(fourAmToday).diff(currentTime, 'seconds') < 0 ? fourAmNextDay : fourAmToday;
 
-    const fourPmToday = (moment().day(2).hour(16).minute(0).second(0)).toISOString();
-    const fourPmNextDay = (moment().day(3).hour(16).minute(0).second(0)).toISOString()
+    const fourPmToday = (moment().hour(16).minute(0).second(0)).toISOString();
+    const fourPmNextDay = (moment().hour(16).minute(0).second(0).add(1, 'days')).toISOString()
     const fourPmToUse = moment(fourPmToday).diff(currentTime, 'seconds') < 0 ? fourPmNextDay : fourPmToday;
 
-    // if four AM is in the past, use four PM
-    if (moment(fourAmToUse).diff(currentTime, 'seconds') < 0) {
-        return fourPmToUse;
-    }
-
-    // if four PM is in the past, use four AM
-    if (moment(fourPmToUse).diff(currentTime, 'seconds') < 0) {
-        return fourAmToUse;
-    }
-
-    // if they are both in the future, use the closest one
     return moment(fourAmToUse).diff(currentTime, 'seconds') > moment(fourPmToUse).diff(currentTime, 'seconds') ? fourPmToUse : fourAmToUse;
 }
 
 function ForecastCountdown() {
     const fourToCountDownTo = findFourToCountDownTo();
-
-    // TODO REMOVE LOG 
-    console.log('fourToCountDownTo', fourToCountDownTo);
 
     return (
         <Countdown
@@ -50,7 +37,7 @@ function ForecastCountdown() {
     );
 }
 
-export default function CountdownContainer({ }) {
+export default function CountdownContainer() {
     const [isToolltipOpen, setIsToolTipOpen] = React.useState(false);
 
     const handleTooltipClose = () => {
