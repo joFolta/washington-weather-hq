@@ -30,6 +30,7 @@ Mt Washington weather web app built with NextJS, Typescript
 ### Notes
 - https://nextjs.org/docs/messages/react-client-hook-in-server-component
 - Testing with Jest in NextJS : https://nextjs.org/docs/pages/building-your-application/optimizing/testing#setting-up-jest-with-the-rust-compiler
+- Vercel automagically deploys to production upon commits to the github "main" branch
 
 
 
