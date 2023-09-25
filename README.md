@@ -18,6 +18,8 @@ Mt Washington weather web app built with NextJS, Typescript
     - https://momentjs.com/timezone/docs/#/use-it/node-js/
     - https://www.npmjs.com/package/react-countdown-simple
     - https://stackoverflow.com/questions/22353009/momentjs-seconds-from-now-till-a-specific-hour
+- Request library for scraping live video url
+    - https://www.npmjs.com/package/got
 
 ### Hurdles
 #### Integration issues of NextJS with MaterialUI 
