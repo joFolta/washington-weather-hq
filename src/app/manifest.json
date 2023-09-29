@@ -1,0 +1,15 @@
+{
+  "short_name": "Weather HQ",
+  "name": "Washington Weather HQ",
+  "icons": [
+    {
+      "src": "favicon.ico",
+      "sizes": "any",
+      "type": "image/x-icon"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#5b5c5b",
+  "background_color": "#1b7033"
+}
