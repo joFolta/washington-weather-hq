@@ -1,7 +1,7 @@
 "use client"
 
 import * as React from 'react';
-import type { Metadata } from 'next'
+// import type { Metadata } from 'next'
 import ThemeRegistry from '@/components/ThemeRegistry/ThemeRegistry';
 import Dashboard from '../components/Dashboard'
 
@@ -26,6 +26,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <head>
         <title>Washington Weather HQ</title>
         <meta name='description' content='Mt Washington weather web app built with NextJS, Typescript' />
+        <link rel="manifest" href="/manifest.webmanifest" />
       </head>
       <body>
         <DarkModeContext.Provider value={isDarkMode}>
