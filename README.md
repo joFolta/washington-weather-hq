@@ -2,7 +2,7 @@
 
 ![Preview](/public/preview.png)
 
-Mt Washington weather web app built with NextJS, Typescript
+⛰️Mt Washington weather web app built with NextJS, Typescript
 
 #### **DISCLAIMER: This demo app is for educational purposes only.** 
 
