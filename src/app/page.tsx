@@ -8,7 +8,7 @@ export default function HomeWeather() {
 
   return (
     <iframe
-      src="https://www.mountwashington.org/experience-the-weather/mount-washington-weather.aspx#innerContent"
+      src="https://mountwashington.org/weather/mount-washington-weather/#content"
       style={{ filter: isDarkMode ? "invert(1)" : "none" }}
       height="1000px"
       loading="lazy">

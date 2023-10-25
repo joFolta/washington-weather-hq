@@ -8,7 +8,7 @@ export default function MultidayForecast() {
 
   return (
     <iframe
-      src="https://www.mountwashington.org/experience-the-weather/higher-summit-forecast.aspx#innerContent"
+      src="https://mountwashington.org/weather/higher-summits-forecast#content"
       style={{ filter: isDarkMode ? "invert(1)" : "none" }}
       height="1000px"
       loading="lazy"
